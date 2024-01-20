@@ -1,6 +1,6 @@
-package no.hvl.data102.filmarkiv.klient;
+package filmarkiv.klient;
 
-import no.hvl.data102.filmarkiv.adt.FilmarkivADT;
+import filmarkiv.adt.FilmarkivADT;
 
 public class Meny {
 	

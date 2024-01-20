@@ -1,6 +1,6 @@
-package no.hvl.data102.filmarkiv.klient;
+package filmarkiv.klient;
 
-import no.hvl.data102.filmarkiv.impl.Filmarkiv;
+import filmarkiv.impl.Filmarkiv;
 
 public class FilmarkivMain {
 

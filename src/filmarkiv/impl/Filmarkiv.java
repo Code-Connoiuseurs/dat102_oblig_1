@@ -1,8 +1,7 @@
-package no.hvl.data102.filmarkiv.impl;
+package filmarkiv.impl;
 
 import java.util.Arrays;
-
-import no.hvl.data102.filmarkiv.adt.FilmarkivADT;
+import filmarkiv.adt.FilmarkivADT;
 
 public class Filmarkiv implements FilmarkivADT {
 	

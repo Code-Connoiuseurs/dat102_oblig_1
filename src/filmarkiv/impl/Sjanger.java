@@ -1,4 +1,4 @@
-package no.hvl.data102.filmarkiv.impl;
+package filmarkiv.impl;
 
 public enum Sjanger {
 

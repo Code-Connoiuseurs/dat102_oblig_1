@@ -1,4 +1,4 @@
-package no.hvl.data102.filmarkiv.test;
+package filmarkiv.test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
