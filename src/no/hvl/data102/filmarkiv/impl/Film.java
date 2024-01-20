@@ -4,23 +4,23 @@ import java.util.Objects;
 
 public class Film {
 	private int filmNr;
-	private String produsent;
 	private String tittel;
+	private String produsent;
+	private String filmselskap;
 	private int lanseringsAr;
 	private Sjanger sjanger;
-	private String filmselskap;
 	
 	public Film() {
 		
 	}
-	public Film(int filmNr, String produsent, String tittel, int lanseringsAr, String filmselskap, Sjanger sjanger) {
+	public Film(int filmNr, String tittel, String produsent, String filmselskap, int lanseringsAr, Sjanger sjanger) {
 		super();
 		this.filmNr = filmNr;
-		this.produsent = produsent;
 		this.tittel = tittel;
+		this.produsent = produsent;
+		this.filmselskap = filmselskap;
 		this.lanseringsAr = lanseringsAr;
 		this.sjanger = sjanger;
-		this.filmselskap = filmselskap;
 	}
 	
 	public int getFilmNr() {
@@ -76,6 +76,11 @@ public class Film {
 	}
 	public void setSjanger(Sjanger sjanger) {
 		this.sjanger = sjanger;
+	}
+	@Override
+	public String toString() {
+		return "Film [filmNr=" + filmNr + ", tittel=" + tittel + ", produsent=" + produsent + ", filmselskap="
+				+ filmselskap + ", lanseringsAr=" + lanseringsAr + ", sjanger=" + sjanger + "]";
 	}
 	
 	

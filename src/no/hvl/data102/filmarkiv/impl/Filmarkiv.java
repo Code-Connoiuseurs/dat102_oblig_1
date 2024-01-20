@@ -15,7 +15,7 @@ public class Filmarkiv implements FilmarkivADT {
 	@Override
 	public Film finnFilm(int nr) {
 		for (Film film : filmSamling) {
-			if (film.getFilmNr() == nr)
+			if (film != null && film.getFilmNr() == nr)
 				return film;
 		}
 		return null;
@@ -31,9 +31,10 @@ public class Filmarkiv implements FilmarkivADT {
 
 	@Override
 	public boolean slettFilm(int filmnr) {
-		for (int i = 0; i <= filmSamling.length; i++) {
+		for (int i = 0; i < filmSamling.length; i++) {
 			if (filmSamling[i] != null && filmSamling[i].getFilmNr() == filmnr) {
-				filmSamling[i] = filmSamling[antall()+1];
+				filmSamling[i] = filmSamling[antall()];
+				filmSamling[antall()] = null;
 				return true;
 			}
 		}
