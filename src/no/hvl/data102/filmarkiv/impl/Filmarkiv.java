@@ -16,12 +16,12 @@ public class Filmarkiv implements FilmarkivADT {
 
 	@Override
 	public Film finnFilm(int nr) {
-		for (Film film : filmTab) {
+		Film[] finnFilmTab = trimTab(filmTab, antall);
+		for (Film film : finnFilmTab) {
 			if (nr == film.getFilmnr()) {
 				return film;
 			}
 		}
-		System.out.println("Film ikke funnet.");
 		return null;
 	}
 
@@ -69,43 +69,39 @@ public class Filmarkiv implements FilmarkivADT {
 
 	@Override
 	public Film[] soekTittel(String delstreng) {
-
 		Film[] soekTab = new Film[filmTab.length];
-		int i = 0;
+		int antallTreff = 0;
 
 		for (Film film : filmTab) {
-			if (film.getTittel().contains(delstreng)) {
-				soekTab[i] = film;
-				i++;
+			if (film != null && film.getTittel().toLowerCase().contains(delstreng.toLowerCase())) {
+				soekTab[antallTreff] = film;
+				antallTreff++;
 			}
-			soekTab = trimTab(soekTab, i);
-			return soekTab;
 		}
-		System.out.println("Ingen filmer funnet.");
-		return null;
+		soekTab = trimTab(soekTab, antallTreff);
+		return soekTab;
 	}
 
 	@Override
 	public Film[] soekProdusent(String delstreng) {
 		Film[] soekTab = new Film[filmTab.length];
-		int i = 0;
+		int antallTreff = 0;
 
 		for (Film film : filmTab) {
-			if (film.getProdusent().contains(delstreng)) {
-				soekTab[i] = film;
-				i++;
+			if (film != null && film.getProdusent().toLowerCase().contains(delstreng.toLowerCase())) {
+				soekTab[antallTreff] = film;
+				antallTreff++;
 			}
-			soekTab = trimTab(soekTab, i);
-			return soekTab;
 		}
-		System.out.println("Ingen filmer funnet.");
-		return null;
+		soekTab = trimTab(soekTab, antallTreff);
+		return soekTab;
 	}
 
 	@Override
 	public int antall(Sjanger sjanger) {
 		int i = 0;
-		for (Film film : filmTab) {
+		Film[] trimFilmTab = trimTab(filmTab, antall);
+		for (Film film : trimFilmTab) {
 			if (film.getSjanger() == sjanger) {
 				i++;
 			}
@@ -127,5 +123,16 @@ public class Filmarkiv implements FilmarkivADT {
 			i++;
 		}
 		return nytab;
+	}
+	
+	public String toString() {
+		String x = "{ \n";
+		Film[] trimFilmTab = trimTab(filmTab, antall);
+		for (Film a : trimFilmTab) {
+			x += "\t" + a.getFilmnr() + " " + a.getProdusent() + " " + a.getTittel() + " " +
+					a.getAar() + " " + a.getSjanger() + " " + a.getFilmselskap() + "\n";
+		}
+		x += "}";
+		return x;
 	}
 }

@@ -70,7 +70,6 @@ public class Film {
 	public void setFilmselskap(String filmselskap) {
 		this.filmselskap = filmselskap;
 	}
-
 	@Override
 	public int hashCode() {
 		return Objects.hash(aar, filmnr, filmselskap, produsent, sjanger, tittel);
@@ -88,6 +87,11 @@ public class Film {
 		return aar == other.aar && filmnr == other.filmnr && Objects.equals(filmselskap, other.filmselskap)
 				&& Objects.equals(produsent, other.produsent) && sjanger == other.sjanger
 				&& Objects.equals(tittel, other.tittel);
+	}
+	
+	@Override
+	public String toString() {
+		return getFilmnr() + ", " + getProdusent() + ", " + getTittel() + ", " + getAar() + ", " + getSjanger() + ", " + getFilmselskap();
 	}
 	
 	
