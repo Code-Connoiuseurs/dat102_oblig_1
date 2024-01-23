@@ -1,10 +1,10 @@
-package no.hvl.data102.filmarkiv.klient;
+package no.hvl.data102.filmarkiv.ui;
 
 import java.util.Scanner;
 
+import no.hvl.data102.film.impl.Film;
+import no.hvl.data102.film.impl.Sjanger;
 import no.hvl.data102.filmarkiv.adt.FilmarkivADT;
-import no.hvl.data102.filmarkiv.impl.Film;
-import no.hvl.data102.filmarkiv.impl.Sjanger;
 
 // Vi velger å implementere Tekstgrensesnitt med statiske metoder sånn at vi ikke trenger å initsialisere den
 public class Tekstgrensesnitt {

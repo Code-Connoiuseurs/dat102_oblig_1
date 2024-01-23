@@ -6,10 +6,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import no.hvl.data102.filmarkiv.impl.Film;
+import no.hvl.data102.film.impl.Film;
+import no.hvl.data102.film.impl.Sjanger;
 import no.hvl.data102.filmarkiv.impl.Filmarkiv;
 import no.hvl.data102.filmarkiv.impl.Filmarkiv2;
-import no.hvl.data102.filmarkiv.impl.Sjanger;
 
 public class Filmarkiv2Test {
 	private Filmarkiv2 filmArkiv;
